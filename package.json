@@ -1,6 +1,5 @@
 {
   "name": "gulp-boilerplate",
-  "homepage": "https://AntonChetverykMA.github.io/js_2048_game/",
   "version": "1.0.0",
   "description": "Frontend boilerplate based on gulp",
   "main": "index.js",
