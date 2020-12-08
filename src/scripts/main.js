@@ -9,8 +9,12 @@ const getRandomInteger = (min, max) => {
   return Math.round(rand);
 };
 const startBtn = document.querySelector('.start');
+const restartBtn = document.querySelector('.restart');
 
 function start() {
+  startBtn.classList.add('hidden');
+  restartBtn.classList.remove('hidden');
+
   const cells = document.querySelectorAll('.field-cell');
   const scoreDisplay = document.querySelector('.game-score');
   const messageLose = document.querySelector('.message-lose');
@@ -189,6 +193,16 @@ function start() {
       document.removeEventListener('keydown', control);
     }
   }
+
+  function restart() {
+    createBoard();
+    score = 0;
+    scoreDisplay.innerHTML = score;
+    messageLose.classList.add('hidden');
+    messageWin.classList.add('hidden');
+  }
+
+  restartBtn.addEventListener('click', restart);
 }
 
-startBtn.addEventListener('click', start);
+startBtn.addEventListener('click', start, { once: true });
